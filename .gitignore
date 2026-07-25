@@ -7,6 +7,8 @@
 !css/**
 !js/
 !js/**
+!assets/
+!assets/**
 !.github/
 !.github/**
 !MEMORIES.md

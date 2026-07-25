@@ -1,6 +1,17 @@
 = Changelog
 :toc:
 
+== 2026-07-25 — Theme toggle
+
+* Header icon button for light / dark mode.
+* Follows `prefers-color-scheme` by default; a click overrides until the system theme changes.
+* Inline boot script sets `data-theme` early to limit flash of the wrong theme.
+
+== 2026-07-24 — Brand mark
+
+* Add org logo assets under `assets/` (`logo.svg`, `logo-avatar.svg`, `logo-256.png`).
+* Show the mark in the site header and hero.
+
 == 2026-07-24
 
 * Initial organization welcome page at the GitHub Pages root (`antora-supplemental.github.io`).

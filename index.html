@@ -15,23 +15,55 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/site.css" />
+    <script>
+      (() => {
+        const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+      })();
+    </script>
   </head>
   <body>
     <div class="atmosphere" aria-hidden="true"></div>
 
     <header class="site-header">
-      <a class="brand-mark" href="/">antora-supplemental</a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#philosophy">Philosophy</a>
-        <a href="#contributions">Contributions</a>
-        <a href="https://antora-supplemental.github.io/docs/">Docs</a>
-        <a href="https://github.com/antora-supplemental">GitHub</a>
-      </nav>
+      <a class="brand-mark" href="/">
+        <img class="brand-logo" src="assets/logo.svg" width="36" height="36" alt="" />
+        <span>antora-supplemental</span>
+      </a>
+      <div class="header-end">
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#philosophy">Philosophy</a>
+          <a href="#contributions">Contributions</a>
+          <a href="https://antora-supplemental.github.io/docs/">Docs</a>
+          <a href="https://github.com/antora-supplemental">GitHub</a>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Switch to dark theme"
+          title="Toggle light / dark"
+        >
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12.1 22c-5.2 0-9.5-3.9-10-9 1.8 2.2 4.5 3.5 7.4 3.5 5.2 0 9.5-4.3 9.5-9.5 0-1.4-.3-2.8-.9-4C21.3 4.8 23 8.2 23 12c0 5.5-4.5 10-10.9 10z"
+            />
+          </svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v1.5a1 1 0 11-2 0V3a1 1 0 011-1zm0 16.5a1 1 0 011 1V21a1 1 0 11-2 0v-1.5a1 1 0 011-1zM3 11a1 1 0 011-1h1.5a1 1 0 110 2H4a1 1 0 01-1-1zm15.5 0a1 1 0 011-1H21a1 1 0 110 2h-1.5a1 1 0 01-1-1zM5.6 5.6a1 1 0 011.4 0l1.1 1.1a1 1 0 11-1.4 1.4L5.6 7A1 1 0 015.6 5.6zm10.3 10.3a1 1 0 011.4 0l1.1 1.1a1 1 0 11-1.4 1.4l-1.1-1.1a1 1 0 010-1.4zM18.4 5.6a1 1 0 010 1.4l-1.1 1.1a1 1 0 11-1.4-1.4l1.1-1.1a1 1 0 011.4 0zM7.1 15.9a1 1 0 010 1.4l-1.1 1.1a1 1 0 11-1.4-1.4l1.1-1.1a1 1 0 011.4 0z"
+            />
+          </svg>
+        </button>
+      </div>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="hero-brand">
         <p class="hero-kicker">Around Antora, not instead of it</p>
+        <img class="hero-logo" src="assets/logo.svg" width="88" height="88" alt="" />
         <h1 id="hero-brand" class="hero-brand">antora-supplemental</h1>
         <p class="hero-lede">
           The Antora project focuses on the core documentation toolchain.

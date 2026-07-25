@@ -8,7 +8,7 @@ Organization welcome site for https://github.com/antora-supplemental[antora-supp
 A lightweight landing page for the organization: philosophy, notable projects, and a clear path into the Antora documentation hub.
 
 * Docs hub: https://antora-supplemental.github.io/docs/[antora-supplemental.github.io/docs]
-* Source: this repository (`index.html` and assets)
+* Source: this repository (`index.html`, `css/`, `js/`, `assets/`)
 
 == Changelog
 
