@@ -1,0 +1,7 @@
+= Changelog
+:toc:
+
+== 2026-07-24
+
+* Initial organization welcome page at the GitHub Pages root (`antora-supplemental.github.io`).
+* Philosophy, notable contributions, and a primary link to the https://antora-supplemental.github.io/docs/[docs hub].

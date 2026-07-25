@@ -1,0 +1,19 @@
+= antora-supplemental.github.io
+:toc:
+
+Organization welcome site for https://github.com/antora-supplemental[antora-supplemental], published at https://antora-supplemental.github.io/[antora-supplemental.github.io].
+
+== Purpose
+
+A lightweight landing page for the organization: philosophy, notable projects, and a clear path into the Antora documentation hub.
+
+* Docs hub: https://antora-supplemental.github.io/docs/[antora-supplemental.github.io/docs]
+* Source: this repository (`index.html` and assets)
+
+== Changelog
+
+See link:CHANGELOG.adoc[CHANGELOG.adoc].
+
+== Local preview
+
+Open `index.html` in a browser, or serve the directory with any static file server.

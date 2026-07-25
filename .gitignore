@@ -1,0 +1,12 @@
+*
+!.gitignore
+!README.adoc
+!CHANGELOG.adoc
+!index.html
+!css/
+!css/**
+!js/
+!js/**
+!.github/
+!.github/**
+!MEMORIES.md

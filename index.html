@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>antora-supplemental</title>
+    <meta
+      name="description"
+      content="Supplemental features and tooling around Antora — Actions, themes, registries, and ecosystem projects the core project does not host."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/site.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand-mark" href="/">antora-supplemental</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#contributions">Contributions</a>
+        <a href="https://antora-supplemental.github.io/docs/">Docs</a>
+        <a href="https://github.com/antora-supplemental">GitHub</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-brand">
+        <p class="hero-kicker">Around Antora, not instead of it</p>
+        <h1 id="hero-brand" class="hero-brand">antora-supplemental</h1>
+        <p class="hero-lede">
+          The Antora project focuses on the core documentation toolchain.
+          This organization hosts the GitHub-native assets, themes, and community tooling that fill the gaps.
+        </p>
+        <p class="hero-actions">
+          <a class="btn btn-primary" href="https://antora-supplemental.github.io/docs/"
+            >Open the docs site</a
+          >
+          <a class="btn btn-ghost" href="https://github.com/antora-supplemental">Browse the org</a>
+        </p>
+      </section>
+
+      <section id="philosophy" class="section philosophy" aria-labelledby="philosophy-title">
+        <h2 id="philosophy-title">Philosophy</h2>
+        <p class="section-lede">
+          Stay complementary. Ship what Antora has declined to maintain on GitHub, prototype in forks when upstream
+          change is the goal, and keep ecosystem projects discoverable without forking the core project’s mission.
+        </p>
+        <ul class="philosophy-list">
+          <li>
+            <strong>Supplemental, not competing.</strong>
+            We build Actions, templates, UI overlays, and registries that sit beside Antora — not alternate cores.
+          </li>
+          <li>
+            <strong>GitHub-shaped gaps.</strong>
+            Official Antora lives on GitLab and does not maintain GitHub Actions or repository templates. We do.
+          </li>
+          <li>
+            <strong>Upstream when it matters.</strong>
+            Forks exist to experiment and contribute back; long-lived divergence is a last resort, not a brand.
+          </li>
+          <li>
+            <strong>Composable docs chrome.</strong>
+            Prefer overlays and modules (dark mode, themes, registries) over monolithic “replace everything” bundles.
+          </li>
+        </ul>
+      </section>
+
+      <section id="contributions" class="section contributions" aria-labelledby="contributions-title">
+        <h2 id="contributions-title">Notable contributions</h2>
+        <p class="section-lede">
+          Projects the community reaches for when publishing Antora on GitHub Pages, theming sites, or finding
+          extensions.
+        </p>
+        <ul class="contrib-list">
+          <li>
+            <a href="https://github.com/antora-supplemental/antora-dark-mode">antora-dark-mode</a>
+            <span>Dark mode overlay for Antora UI — toggle, FOUC prevention, CSS overrides without owning
+              <code>ui.bundle</code>.</span
+            >
+          </li>
+          <li>
+            <a href="https://github.com/antora-supplemental/valentus-theme">valentus-theme</a>
+            <span>Composed doc-site chrome with bundled dark mode for sites that want a full UI stack.</span>
+          </li>
+          <li>
+            <a href="https://github.com/antora-supplemental/antora-build-action">antora-build-action</a>
+            <span>Lean GitHub Action to build Antora and hand off to the official Pages deploy flow.</span>
+          </li>
+          <li>
+            <a href="https://github.com/antora-supplemental/antora-github-deploy-template"
+              >antora-github-deploy-template</a
+            >
+            <span>Repository template: playbook, docs layout, and Actions → GitHub Pages in one place.</span>
+          </li>
+          <li>
+            <a href="https://github.com/antora-supplemental/antora-extensions-registry"
+              >antora-extensions-registry</a
+            >
+            <span
+              >Catalog of extensions and themes — live at
+              <a href="https://antora-extensions.org">antora-extensions.org</a>.</span
+            >
+          </li>
+          <li>
+            <a href="https://github.com/antora-supplemental/docs">docs</a>
+            <span
+              >Organization documentation hub aggregating project manuals —
+              <a href="https://antora-supplemental.github.io/docs/">antora-supplemental.github.io/docs</a>.</span
+            >
+          </li>
+          <li>
+            <a href="https://github.com/antora-supplemental/architexture-theme">architexture-theme</a>
+            <span>Bespoke architectural Antora theme with light/dark demo pages.</span>
+          </li>
+          <li>
+            <a href="https://github.com/antora-supplemental/dprint-plugin-asciidoc">dprint-plugin-asciidoc</a>
+            <span>Format AsciiDoc with dprint (WASM / npm) for consistent source trees.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section cta-band" aria-labelledby="cta-title">
+        <h2 id="cta-title">Start with the docs</h2>
+        <p>
+          Guides for deployment, Actions, dark mode, and the extensions registry live on the Antora Supplemental
+          documentation site.
+        </p>
+        <p>
+          <a class="btn btn-primary" href="https://antora-supplemental.github.io/docs/"
+            >antora-supplemental.github.io/docs</a
+          >
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="https://github.com/antora-supplemental">antora-supplemental</a>
+        · supplemental to
+        <a href="https://antora.org">Antora</a>
+        · site source in
+        <a href="https://github.com/antora-supplemental/antora-supplemental.github.io"
+          >antora-supplemental.github.io</a
+        >
+      </p>
+    </footer>
+
+    <script src="js/site.js" defer></script>
+  </body>
+</html>
