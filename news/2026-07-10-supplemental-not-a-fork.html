@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Supplemental is not a soft fork of Antora — antora-supplemental</title>
+    <meta
+      name="description"
+      content="Why antora-supplemental exists: fill GitHub-shaped gaps Antora will not maintain, without competing with the core toolchain."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/site.css" />
+    <script>
+      (() => {
+        const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand-mark" href="/">
+        <img class="brand-logo" src="../assets/logo.svg" width="36" height="36" alt="" />
+        <span>antora-supplemental</span>
+      </a>
+      <div class="header-end">
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/#philosophy">Philosophy</a>
+          <a href="/#contributions">Contributions</a>
+          <a href="/news/" aria-current="page">News</a>
+          <a href="https://antora-supplemental.github.io/docs/">Docs</a>
+          <a href="https://github.com/antora-supplemental">GitHub</a>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Switch to dark theme"
+          title="Toggle light / dark"
+        >
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12.1 22c-5.2 0-9.5-3.9-10-9 1.8 2.2 4.5 3.5 7.4 3.5 5.2 0 9.5-4.3 9.5-9.5 0-1.4-.3-2.8-.9-4C21.3 4.8 23 8.2 23 12c0 5.5-4.5 10-10.9 10z"
+            />
+          </svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v1.5a1 1 0 11-2 0V3a1 1 0 011-1zm0 16.5a1 1 0 011 1V21a1 1 0 11-2 0v-1.5a1 1 0 011-1zM3 11a1 1 0 011-1h1.5a1 1 0 110 2H4a1 1 0 01-1-1zm15.5 0a1 1 0 011-1H21a1 1 0 110 2h-1.5a1 1 0 01-1-1zM5.6 5.6a1 1 0 011.4 0l1.1 1.1a1 1 0 11-1.4 1.4L5.6 7A1 1 0 015.6 5.6zm10.3 10.3a1 1 0 011.4 0l1.1 1.1a1 1 0 11-1.4 1.4l-1.1-1.1a1 1 0 010-1.4zM18.4 5.6a1 1 0 010 1.4l-1.1 1.1a1 1 0 11-1.4-1.4l1.1-1.1a1 1 0 011.4 0zM7.1 15.9a1 1 0 010 1.4l-1.1 1.1a1 1 0 11-1.4-1.4l1.1-1.1a1 1 0 011.4 0z"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <article class="article">
+        <p class="article-back"><a href="/news/">← News</a></p>
+        <header class="article-header">
+          <p class="article-meta">
+            <time datetime="2026-07-10">10 Jul 2026</time>
+            <span class="article-tag">Philosophy</span>
+          </p>
+          <h1>Supplemental is not a soft fork of Antora</h1>
+        </header>
+
+        <div class="article-body">
+          <p>
+            Antora builds documentation sites from AsciiDoc across many repositories. That job is hard, and the core
+            project is right to keep its focus there. What it does <em>not</em> do — by design — is maintain
+            GitHub-native assets: Actions, repository templates, org workflow catalogs, and a chunk of the theming and
+            discovery surface that GitHub docs authors need every week.
+          </p>
+          <p>
+            That is the opening. <strong>antora-supplemental</strong> exists to fill it. Not to rebrand Antora. Not to
+            maintain a long-lived parallel core. Not to argue that GitLab hosting was a mistake.
+          </p>
+          <p>
+            The rule is simple: stay complementary. Ship Actions that hand off cleanly to the official Pages deploy
+            path. Ship overlays and composed themes instead of “replace the whole UI or leave.” Ship registries so
+            extensions are findable. Prototype in forks when the goal is an upstream patch — then contribute back.
+          </p>
+          <p>
+            Soft forks fail because they become brands. Supplemental work succeeds when it stays boring: a package you
+            add, a template you click, a toggle that respects your existing bundle. If a feature belongs in Antora
+            core, we say so and we track the issue. If it belongs on GitHub and Antora will not host it, we ship it
+            here.
+          </p>
+          <p>
+            That is the mandate. Full stop. Everything else — dark mode, Valentus, serve, incremental rebuilds,
+            alias redirects — is an instance of the same idea.
+          </p>
+        </div>
+
+        <footer class="article-footer">
+          <p>
+            Related:
+            <a href="/#philosophy">Philosophy on the welcome site</a>
+            ·
+            <a href="https://antora-supplemental.github.io/docs/">Docs hub</a>
+            ·
+            <a href="https://github.com/antora-supplemental">GitHub org</a>
+          </p>
+        </footer>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="https://github.com/antora-supplemental">antora-supplemental</a>
+        · supplemental to
+        <a href="https://antora.org">Antora</a>
+        · site source in
+        <a href="https://github.com/antora-supplemental/antora-supplemental.github.io"
+          >antora-supplemental.github.io</a
+        >
+      </p>
+    </footer>
+
+    <script src="../js/site.js" defer></script>
+  </body>
+</html>

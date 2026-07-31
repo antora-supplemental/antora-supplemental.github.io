@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>News — antora-supplemental</title>
+    <meta
+      name="description"
+      content="News from antora-supplemental: product releases, major features, and the thinking behind the work."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/site.css" />
+    <script>
+      (() => {
+        const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = dark ? "dark" : "light";
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand-mark" href="/">
+        <img class="brand-logo" src="../assets/logo.svg" width="36" height="36" alt="" />
+        <span>antora-supplemental</span>
+      </a>
+      <div class="header-end">
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/#philosophy">Philosophy</a>
+          <a href="/#contributions">Contributions</a>
+          <a href="/news/" aria-current="page">News</a>
+          <a href="https://antora-supplemental.github.io/docs/">Docs</a>
+          <a href="https://github.com/antora-supplemental">GitHub</a>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Switch to dark theme"
+          title="Toggle light / dark"
+        >
+          <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12.1 22c-5.2 0-9.5-3.9-10-9 1.8 2.2 4.5 3.5 7.4 3.5 5.2 0 9.5-4.3 9.5-9.5 0-1.4-.3-2.8-.9-4C21.3 4.8 23 8.2 23 12c0 5.5-4.5 10-10.9 10z"
+            />
+          </svg>
+          <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v1.5a1 1 0 11-2 0V3a1 1 0 011-1zm0 16.5a1 1 0 011 1V21a1 1 0 11-2 0v-1.5a1 1 0 011-1zM3 11a1 1 0 011-1h1.5a1 1 0 110 2H4a1 1 0 01-1-1zm15.5 0a1 1 0 011-1H21a1 1 0 110 2h-1.5a1 1 0 01-1-1zM5.6 5.6a1 1 0 011.4 0l1.1 1.1a1 1 0 11-1.4 1.4L5.6 7A1 1 0 015.6 5.6zm10.3 10.3a1 1 0 011.4 0l1.1 1.1a1 1 0 11-1.4 1.4l-1.1-1.1a1 1 0 010-1.4zM18.4 5.6a1 1 0 010 1.4l-1.1 1.1a1 1 0 11-1.4-1.4l1.1-1.1a1 1 0 011.4 0zM7.1 15.9a1 1 0 010 1.4l-1.1 1.1a1 1 0 11-1.4-1.4l1.1-1.1a1 1 0 011.4 0z"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <header class="page-intro">
+        <p class="hero-kicker page-intro-kicker">Dispatches</p>
+        <h1 class="page-title">News</h1>
+        <p class="page-lede">
+          Releases, hard calls, and the thinking that shapes the Antora supplemental stack. Direct copy. No press kit
+          fluff.
+        </p>
+      </header>
+
+      <section class="section news-feed" aria-labelledby="news-feed-title">
+        <h2 id="news-feed-title" class="visually-hidden">All articles</h2>
+        <ol class="news-list">
+          <li>
+            <time datetime="2026-07-31">31 Jul 2026</time>
+            <div>
+              <a href="2026-07-31-welcome-site-opens.html"
+                >The welcome site is live — and it has a news desk</a
+              >
+              <p>
+                antora-supplemental.github.io is the front door. Philosophy, projects, docs, and now a feed for what
+                ships.
+              </p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-07-29">29 Jul 2026</time>
+            <div>
+              <a href="2026-07-29-alias-component-to-latest.html"
+                >Stop pasting the “latest” redirect. Install it.</a
+              >
+              <p>
+                <code>alias-component-to-latest</code> packages the official Antora docs trick so versioned sites can
+                point <code>/component/</code> at the newest start page without copy-paste debt.
+              </p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-07-25">25 Jul 2026</time>
+            <div>
+              <a href="2026-07-25-valentus-chrome-that-fixes-defaults.html"
+                >Valentus: chrome that fixes the defaults</a
+              >
+              <p>
+                Full doc-site UI with dark mode baked in — and concrete fixes for Default UI and Lunr pain that
+                authors hit every day.
+              </p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-07-20">20 Jul 2026</time>
+            <div>
+              <a href="2026-07-20-antora-serve-ships.html"
+                ><code>antora serve</code> was declined. We shipped it anyway.</a
+              >
+              <p>
+                Local generate → serve → watch → live-reload, with optional dirty-set rebuilds via
+                <code>@antora-supplemental/incremental</code>.
+              </p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-07-15">15 Jul 2026</time>
+            <div>
+              <a href="2026-07-15-dark-mode-is-an-overlay.html"
+                >Dark mode is an overlay. Treat it like one.</a
+              >
+              <p>
+                <code>antora-dark-mode</code> stays out of <code>ui.bundle</code> when you already have a theme. That
+                choice is the product.
+              </p>
+            </div>
+          </li>
+          <li>
+            <time datetime="2026-07-10">10 Jul 2026</time>
+            <div>
+              <a href="2026-07-10-supplemental-not-a-fork.html"
+                >Supplemental is not a soft fork of Antora</a
+              >
+              <p>
+                GitHub Actions, templates, themes, registries — the gaps core Antora will not host. That is the
+                mandate. Full stop.
+              </p>
+            </div>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="https://github.com/antora-supplemental">antora-supplemental</a>
+        · supplemental to
+        <a href="https://antora.org">Antora</a>
+        · site source in
+        <a href="https://github.com/antora-supplemental/antora-supplemental.github.io"
+          >antora-supplemental.github.io</a
+        >
+      </p>
+    </footer>
+
+    <script src="../js/site.js" defer></script>
+  </body>
+</html>
