@@ -7,12 +7,13 @@ Registrar / DNS host: **Cloudflare**. You apply these; GitHub/Netlify only consu
 | Host | Type | Target | Proxy |
 |------|------|--------|--------|
 | `@` | CNAME | `antora-supplemental.github.io` | See HTTPS note below |
+| `www` | CNAME | `antora-supplemental.github.io` | Same as `@` (silences GitHub/Cloudflare apex+www checks) |
 | `docs` | CNAME | `antora-supplemental.github.io` | See HTTPS note below |
 | `registry` | CNAME | *(Netlify hostname from Domain management)* | Proxied OK (Netlify) |
 
 Cloudflare **CNAME flattening** makes `@` → `….github.io` valid (plain DNS often forbids apex CNAMEs).
 
-**Do not add `www` unless you want it.** GitHub Pages may still show “`www.antora-supplemental.org` is improperly configured” when the custom domain is the apex — that warning is GitHub assuming apex+www pairs. Ignore it, or silence it later with a `www` CNAME + redirect to apex. It does not mean the apex site is broken.
+**`www`:** Optional for humans (apex alone is enough), but GitHub Pages (and some Cloudflare setup tips) expect apex+`www` together. Add `www` CNAME → `antora-supplemental.github.io` to silence “improperly configured” warnings; it serves the same welcome site as `@`. Redirect `www` → apex in Cloudflare if you want one canonical hostname.
 
 Both `@` and `docs` CNAME to the **same** `antora-supplemental.github.io` hostname on purpose. GitHub routes by the published `CNAME` file + Pages custom-domain binding:
 
