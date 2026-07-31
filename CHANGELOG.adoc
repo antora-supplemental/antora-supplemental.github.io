@@ -6,7 +6,7 @@
 * Migrate welcome site to Astro static (`src/`, content collections for news).
 * Nav and CTAs target `docs.antora-supplemental.org` and `registry.antora-supplemental.org`.
 * Deploy workflow: `pnpm build` → upload `dist/` (includes `CNAME` for apex).
-* Document registrar DNS in link:DOMAIN.adoc[DOMAIN.adoc].
+* Document Cloudflare DNS in link:DOMAIN.adoc[DOMAIN.adoc] (apex CNAME flattening, no required `www`, grey-cloud for GitHub HTTPS).
 
 == 2026-07-31 — News feed
 

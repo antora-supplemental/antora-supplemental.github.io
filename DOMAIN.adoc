@@ -1,48 +1,61 @@
-# Custom domain setup — antora-supplemental.org
+# Custom domain setup — antora-supplemental.org (Cloudflare)
 
-Registrar DNS (you apply these; GitHub/Netlify cannot create them for you).
+Registrar / DNS host: **Cloudflare**. You apply these; GitHub/Netlify only consume them.
 
-## Records
+## Recommended DNS (no `www`)
 
-| Host | Type | Value |
-|------|------|--------|
-| `@` (apex) | A | `185.199.108.153` |
-| `@` | A | `185.199.109.153` |
-| `@` | A | `185.199.110.153` |
-| `@` | A | `185.199.111.153` |
-| `@` | AAAA | `2606:50c0:8000::153` |
-| `@` | AAAA | `2606:50c0:8001::153` |
-| `@` | AAAA | `2606:50c0:8002::153` |
-| `@` | AAAA | `2606:50c0:8003::153` |
-| `www` | CNAME | `antora-supplemental.github.io` |
-| `docs` | CNAME | `antora-supplemental.github.io` |
-| `registry` | CNAME | *(Netlify site hostname — from Netlify → Domain management, e.g. `antora-extensions-registry.netlify.app`)* |
+| Host | Type | Target | Proxy |
+|------|------|--------|--------|
+| `@` | CNAME | `antora-supplemental.github.io` | See HTTPS note below |
+| `docs` | CNAME | `antora-supplemental.github.io` | See HTTPS note below |
+| `registry` | CNAME | *(Netlify hostname from Domain management)* | Proxied OK (Netlify) |
 
-GitHub Pages publishes a `CNAME` file for apex (`antora-supplemental.org`) and for docs (`docs.antora-supplemental.org`). After DNS propagates, enable **Enforce HTTPS** in each repo’s Pages settings if not already on.
+Cloudflare **CNAME flattening** makes `@` → `….github.io` valid (plain DNS often forbids apex CNAMEs).
+
+**Do not add `www` unless you want it.** GitHub Pages may still show “`www.antora-supplemental.org` is improperly configured” when the custom domain is the apex — that warning is GitHub assuming apex+www pairs. Ignore it, or silence it later with a `www` CNAME + redirect to apex. It does not mean the apex site is broken.
+
+Both `@` and `docs` CNAME to the **same** `antora-supplemental.github.io` hostname on purpose. GitHub routes by the published `CNAME` file + Pages custom-domain binding:
+
+| Hostname | Repo | `CNAME` file contents |
+|----------|------|------------------------|
+| `antora-supplemental.org` | `antora-supplemental.github.io` | `antora-supplemental.org` |
+| `docs.antora-supplemental.org` | `docs` | `docs.antora-supplemental.org` |
+
+## HTTPS / “not eligible for HTTPS” on GitHub
+
+Two different TLS layers:
+
+1. **Cloudflare edge HTTPS** (orange cloud / Proxied) — visitors already get HTTPS via Cloudflare. Site can look “live on https://…” while GitHub still complains.
+2. **GitHub Pages Let’s Encrypt cert** — required for GitHub’s “Enforce HTTPS” checkbox. GitHub must see DNS pointing at **GitHub**, not Cloudflare proxy IPs.
+
+If GitHub says the domain is **not eligible for HTTPS**:
+
+1. In Cloudflare DNS, set `@` and `docs` to **DNS only** (grey cloud), not Proxied.
+2. Wait a few minutes; in the repo **Settings → Pages**, remove and re-add the custom domain (or wait for the cert job).
+3. When the checkmark appears, enable **Enforce HTTPS**.
+4. Leave grey-cloud permanently for GitHub Pages hosts (simplest), **or** orange-cloud again knowing GitHub’s cert may not renew until you grey-cloud again.
+
+CAA records (if any) must allow `letsencrypt.org`.
+
+Netlify `registry` can stay Proxied; that is unrelated to GitHub’s cert issuance.
 
 ## App hosts
 
 | Hostname | Repo / app | Platform |
 |----------|------------|----------|
-| `antora-supplemental.org` / `www` | `antora-supplemental.github.io` | GitHub Pages (Astro static) |
+| `antora-supplemental.org` | `antora-supplemental.github.io` | GitHub Pages (Astro) |
 | `docs.antora-supplemental.org` | `docs` | GitHub Pages (Antora) |
 | `registry.antora-supplemental.org` | `antora-extensions-registry` | Netlify (SolidStart) |
 
 ## Registry OAuth / Better Auth (Netlify env)
-
-Set after the custom domain is attached in Netlify:
 
 ```
 BETTER_AUTH_URL=https://registry.antora-supplemental.org
 BETTER_AUTH_TRUSTED_ORIGINS=https://registry.antora-supplemental.org
 ```
 
-Update each OAuth app’s callback to:
-
-`https://registry.antora-supplemental.org/api/auth/callback/<provider>`
-
-(providers: `github`, `gitlab`, `google`, `microsoft`, `apple` as configured)
+Callbacks: `https://registry.antora-supplemental.org/api/auth/callback/<provider>`
 
 ## Cutover note
 
-`https://antora-supplemental.github.io/` and `https://antora-supplemental.github.io/docs/` keep working as GitHub’s default hostnames during and after cutover.
+`https://antora-supplemental.github.io/` and `https://antora-supplemental.github.io/docs/` remain valid GitHub default hostnames.
