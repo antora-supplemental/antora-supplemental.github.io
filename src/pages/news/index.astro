@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const news = (await getCollection("news"))
+  .filter((e) => !e.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+---
+
+<BaseLayout
+  title="News — antora-supplemental"
+  description="News from antora-supplemental: product releases, major features, and the thinking behind the work."
+  currentPath="/news/"
+>
+  <header class="page-intro">
+    <p class="hero-kicker page-intro-kicker">Dispatches</p>
+    <h1 class="page-title">News</h1>
+    <p class="page-lede">
+      Releases, hard calls, and the thinking that shapes the Antora supplemental stack. Direct copy. No press kit fluff.
+    </p>
+  </header>
+
+  <section class="section news-feed" aria-labelledby="news-feed-title">
+    <h2 id="news-feed-title" class="visually-hidden">All articles</h2>
+    <ol class="news-list">
+      {
+        news.map((entry) => (
+          <li>
+            <time datetime={entry.data.date.toISOString().slice(0, 10)}>{formatDate(entry.data.date)}</time>
+            <div>
+              <a href={`/news/${entry.id}/`}>{entry.data.title}</a>
+              <p>{entry.data.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+</BaseLayout>

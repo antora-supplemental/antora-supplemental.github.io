@@ -1,5 +1,5 @@
 # Durable facts for agents working in this repository.
 
-- [1] Org root GitHub Pages for `antora-supplemental` is this repo (`antora-supplemental.github.io`). Project docs hubs live under path prefixes (e.g. `/docs/`, `/antora-dark-mode/`).
-- [1] Org news lives under `news/` (static HTML articles + `news/index.html`). Homepage `#news` teases latest; voice is direct/newsy. Allow-list `news/` in `.gitignore`.
-- [1] Pages deploy stages an explicit `_site` tree (`deploy.yml`); new top-level paths (e.g. `news/`) must be copied there or they 404.
+- [2] Org root GitHub Pages for `antora-supplemental` is this repo (`antora-supplemental.github.io`). Custom domain apex: `antora-supplemental.org` (see DOMAIN.adoc). Docs: `docs.antora-supplemental.org`. Registry app: `registry.antora-supplemental.org`.
+- [2] Site is Astro static (`pnpm build` → `dist/`). News lives in `src/content/news/`. Do not hand-copy folders into `_site`.
+- [1] Org news voice is direct/newsy. Allow-list Astro paths in `.gitignore`.

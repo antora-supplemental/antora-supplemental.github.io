@@ -1,0 +1,19 @@
+{
+  "name": "antora-supplemental.github.io",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Organization welcome site for antora-supplemental",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.16.15"
+  },
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

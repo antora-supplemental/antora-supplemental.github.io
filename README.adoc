@@ -1,15 +1,17 @@
 = antora-supplemental.github.io
 :toc:
 
-Organization welcome site for https://github.com/antora-supplemental[antora-supplemental], published at https://antora-supplemental.github.io/[antora-supplemental.github.io].
+Organization welcome site for https://github.com/antora-supplemental[antora-supplemental], published at https://antora-supplemental.org/[antora-supplemental.org] (GitHub Pages hostname: https://antora-supplemental.github.io/[antora-supplemental.github.io]).
 
 == Purpose
 
-A lightweight landing page for the organization: philosophy, notable projects, news, and a clear path into the Antora documentation hub.
+Astro static landing page: philosophy, notable projects, news, and paths into docs and the ecosystem registry.
 
-* Docs hub: https://antora-supplemental.github.io/docs/[antora-supplemental.github.io/docs]
-* News: https://antora-supplemental.github.io/news/[antora-supplemental.github.io/news]
-* Source: this repository (`index.html`, `news/`, `css/`, `js/`, `assets/`)
+* Site: https://antora-supplemental.org/[antora-supplemental.org]
+* Docs hub: https://docs.antora-supplemental.org/[docs.antora-supplemental.org]
+* Registry: https://registry.antora-supplemental.org/[registry.antora-supplemental.org]
+* Custom domain DNS: link:DOMAIN.adoc[DOMAIN.adoc]
+* Source: this repository (`src/`, `public/`)
 
 == Changelog
 
@@ -17,4 +19,10 @@ See link:CHANGELOG.adoc[CHANGELOG.adoc].
 
 == Local preview
 
-Open `index.html` in a browser, or serve the directory with any static file server.
+[source,shell]
+----
+pnpm install
+pnpm dev
+----
+
+Production build: `pnpm build` (output in `dist/`).

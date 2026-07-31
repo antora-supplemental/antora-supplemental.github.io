@@ -1,0 +1,48 @@
+# Custom domain setup — antora-supplemental.org
+
+Registrar DNS (you apply these; GitHub/Netlify cannot create them for you).
+
+## Records
+
+| Host | Type | Value |
+|------|------|--------|
+| `@` (apex) | A | `185.199.108.153` |
+| `@` | A | `185.199.109.153` |
+| `@` | A | `185.199.110.153` |
+| `@` | A | `185.199.111.153` |
+| `@` | AAAA | `2606:50c0:8000::153` |
+| `@` | AAAA | `2606:50c0:8001::153` |
+| `@` | AAAA | `2606:50c0:8002::153` |
+| `@` | AAAA | `2606:50c0:8003::153` |
+| `www` | CNAME | `antora-supplemental.github.io` |
+| `docs` | CNAME | `antora-supplemental.github.io` |
+| `registry` | CNAME | *(Netlify site hostname — from Netlify → Domain management, e.g. `antora-extensions-registry.netlify.app`)* |
+
+GitHub Pages publishes a `CNAME` file for apex (`antora-supplemental.org`) and for docs (`docs.antora-supplemental.org`). After DNS propagates, enable **Enforce HTTPS** in each repo’s Pages settings if not already on.
+
+## App hosts
+
+| Hostname | Repo / app | Platform |
+|----------|------------|----------|
+| `antora-supplemental.org` / `www` | `antora-supplemental.github.io` | GitHub Pages (Astro static) |
+| `docs.antora-supplemental.org` | `docs` | GitHub Pages (Antora) |
+| `registry.antora-supplemental.org` | `antora-extensions-registry` | Netlify (SolidStart) |
+
+## Registry OAuth / Better Auth (Netlify env)
+
+Set after the custom domain is attached in Netlify:
+
+```
+BETTER_AUTH_URL=https://registry.antora-supplemental.org
+BETTER_AUTH_TRUSTED_ORIGINS=https://registry.antora-supplemental.org
+```
+
+Update each OAuth app’s callback to:
+
+`https://registry.antora-supplemental.org/api/auth/callback/<provider>`
+
+(providers: `github`, `gitlab`, `google`, `microsoft`, `apple` as configured)
+
+## Cutover note
+
+`https://antora-supplemental.github.io/` and `https://antora-supplemental.github.io/docs/` keep working as GitHub’s default hostnames during and after cutover.

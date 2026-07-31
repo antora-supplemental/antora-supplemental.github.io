@@ -1,0 +1,144 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { DOCS_URL, GITHUB_ORG_URL, REGISTRY_URL } from "../consts";
+
+const news = (await getCollection("news"))
+  .filter((e) => !e.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 4);
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+---
+
+<BaseLayout currentPath="/">
+  <section class="hero" aria-labelledby="hero-brand">
+    <p class="hero-kicker">Antora, taken to the next level</p>
+    <img class="hero-logo" src="/assets/logo.svg" width="88" height="88" alt="" />
+    <h1 id="hero-brand" class="hero-brand">antora-supplemental</h1>
+    <p class="hero-lede">
+      The Antora project focuses on the core documentation toolchain. This organization hosts the GitHub-native
+      assets, themes, and community tooling that fill the gaps.
+    </p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href={DOCS_URL}>Open the docs site</a>
+      <a class="btn btn-ghost" href={REGISTRY_URL}>Browse the registry</a>
+    </p>
+  </section>
+
+  <section id="philosophy" class="section philosophy" aria-labelledby="philosophy-title">
+    <h2 id="philosophy-title">Philosophy</h2>
+    <p class="section-lede">
+      Stay complementary. Ship what Antora has declined to maintain on GitHub, prototype in forks when upstream change
+      is the goal, and keep ecosystem projects discoverable without forking the core project’s mission.
+    </p>
+    <ul class="philosophy-list">
+      <li>
+        <strong>Supplemental, not competing.</strong>
+        We build Actions, templates, UI overlays, and registries that sit beside Antora — not alternate cores.
+      </li>
+      <li>
+        <strong>GitHub-shaped gaps.</strong>
+        Official Antora lives on GitLab and does not maintain GitHub Actions or repository templates. We do.
+      </li>
+      <li>
+        <strong>Upstream when it matters.</strong>
+        Forks exist to experiment and contribute back; long-lived divergence is a last resort, not a brand.
+      </li>
+      <li>
+        <strong>Composable docs chrome.</strong>
+        Prefer overlays and modules (dark mode, themes, registries) over monolithic “replace everything” bundles.
+      </li>
+    </ul>
+  </section>
+
+  <section id="contributions" class="section contributions" aria-labelledby="contributions-title">
+    <h2 id="contributions-title">Notable contributions</h2>
+    <p class="section-lede">
+      Projects the community reaches for when publishing Antora on GitHub Pages, theming sites, or finding extensions.
+    </p>
+    <ul class="contrib-list">
+      <li>
+        <a href="https://github.com/antora-supplemental/antora-dark-mode">antora-dark-mode</a>
+        <span
+          >Dark mode overlay for Antora UI — toggle, FOUC prevention, CSS overrides without owning
+          <code>ui.bundle</code>.</span
+        >
+      </li>
+      <li>
+        <a href="https://github.com/antora-supplemental/valentus-theme">valentus-theme</a>
+        <span>Composed doc-site chrome with bundled dark mode for sites that want a full UI stack.</span>
+      </li>
+      <li>
+        <a href="https://github.com/antora-supplemental/antora-build-action">antora-build-action</a>
+        <span>Lean GitHub Action to build Antora and hand off to the official Pages deploy flow.</span>
+      </li>
+      <li>
+        <a href="https://github.com/antora-supplemental/antora-github-deploy-template"
+          >antora-github-deploy-template</a
+        >
+        <span>Repository template: playbook, docs layout, and Actions → GitHub Pages in one place.</span>
+      </li>
+      <li>
+        <a href="https://github.com/antora-supplemental/antora-extensions-registry"
+          >antora-extensions-registry</a
+        >
+        <span
+          >Ecosystem catalog (extensions, themes, UI modules) —
+          <a href={REGISTRY_URL}>registry.antora-supplemental.org</a>.</span
+        >
+      </li>
+      <li>
+        <a href="https://github.com/antora-supplemental/docs">docs</a>
+        <span
+          >Organization documentation hub —
+          <a href={DOCS_URL}>docs.antora-supplemental.org</a>.</span
+        >
+      </li>
+      <li>
+        <a href="https://github.com/antora-supplemental/architexture-theme">architexture-theme</a>
+        <span>Bespoke architectural Antora theme with light/dark demo pages.</span>
+      </li>
+      <li>
+        <a href="https://github.com/antora-supplemental/dprint-plugin-asciidoc">dprint-plugin-asciidoc</a>
+        <span>Format AsciiDoc with dprint (WASM / npm) for consistent source trees.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="news" class="section news" aria-labelledby="news-title">
+    <h2 id="news-title">News</h2>
+    <p class="section-lede">
+      Releases, hard calls, and the thinking behind the stack — in a direct voice. Full archive on the news desk.
+    </p>
+    <ol class="news-list news-list-home">
+      {
+        news.map((entry) => (
+          <li>
+            <time datetime={entry.data.date.toISOString().slice(0, 10)}>{formatDate(entry.data.date)}</time>
+            <div>
+              <a href={`/news/${entry.id}/`}>{entry.data.title}</a>
+              <p>{entry.data.description}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="news-more">
+      <a href="/news/">All news →</a>
+    </p>
+  </section>
+
+  <section class="section cta-band" aria-labelledby="cta-title">
+    <h2 id="cta-title">Docs and registry</h2>
+    <p>
+      Guides live on the documentation hub. Discover extensions, themes, and UI modules in the ecosystem registry.
+    </p>
+    <p class="hero-actions">
+      <a class="btn btn-primary" href={DOCS_URL}>docs.antora-supplemental.org</a>
+      <a class="btn btn-ghost" href={REGISTRY_URL}>registry.antora-supplemental.org</a>
+      <a class="btn btn-ghost" href={GITHUB_ORG_URL}>GitHub org</a>
+    </p>
+  </section>
+</BaseLayout>
