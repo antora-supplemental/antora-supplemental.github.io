@@ -26,11 +26,12 @@ jobs:
 
       - name: Stage site
         run: |
-          mkdir -p _site/css _site/js _site/assets
+          mkdir -p _site/css _site/js _site/assets _site/news
           cp index.html _site/
           cp css/site.css _site/css/
           cp js/site.js _site/js/
           cp -r assets/. _site/assets/
+          cp -r news/. _site/news/
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

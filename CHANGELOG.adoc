@@ -6,6 +6,7 @@
 * Add `/news/` index and article pages with a direct, newsy voice.
 * Homepage `#news` section surfaces the latest items; nav links to News.
 * Back-fill: org philosophy, dark-mode overlay, `antora-serve` / incremental, Valentus, `alias-component-to-latest`, welcome-site launch.
+* Deploy workflow stages `news/` into the Pages artifact (fixes 404 on All news).
 
 == 2026-07-25 — Theme toggle
 
