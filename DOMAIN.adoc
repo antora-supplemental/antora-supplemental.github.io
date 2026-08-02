@@ -15,12 +15,14 @@ Cloudflare **CNAME flattening** makes `@` → `….github.io` valid (plain DNS o
 
 **`www`:** Optional for humans (apex alone is enough), but GitHub Pages (and some Cloudflare setup tips) expect apex+`www` together. Add `www` CNAME → `antora-supplemental.github.io` to silence “improperly configured” warnings; it serves the same welcome site as `@`. Redirect `www` → apex in Cloudflare if you want one canonical hostname.
 
-Both `@` and `docs` CNAME to the **same** `antora-supplemental.github.io` hostname on purpose. GitHub routes by the published `CNAME` file + Pages custom-domain binding:
+Both `@` / `www` and `docs` CNAME to the **same** `antora-supplemental.github.io` hostname on purpose. GitHub routes by the published `CNAME` file **and** the custom domain set in each repo’s **Settings → Pages** (the file alone is not enough):
 
-| Hostname | Repo | `CNAME` file contents |
-|----------|------|------------------------|
-| `antora-supplemental.org` | `antora-supplemental.github.io` | `antora-supplemental.org` |
-| `docs.antora-supplemental.org` | `docs` | `docs.antora-supplemental.org` |
+| Hostname | Repo | Pages custom domain | `CNAME` file |
+|----------|------|---------------------|--------------|
+| `antora-supplemental.org` | `antora-supplemental.github.io` | `antora-supplemental.org` | same |
+| `docs.antora-supplemental.org` | `docs` | `docs.antora-supplemental.org` | same |
+
+If `docs.*` 404s while `antora-supplemental.org/docs/` works, the Pages custom domain on the `docs` repo was never set (or Fastly still has a cached 404 for `/` — purge Cloudflare cache or open `/docs/` / `/index.html`). Antora’s start page lives under `/docs/…` because the hub component is named `docs`.
 
 ## HTTPS / “not eligible for HTTPS” on GitHub
 
