@@ -1,6 +1,10 @@
 = Changelog
 :toc:
 
+== 2026-08-02 — Unversioned component URLs
+
+* News: rename stopgap extension to `unversioned-component-urls` (selector default; alias mode retained).
+
 == 2026-07-31 — Domain unify + Astro
 
 * Migrate welcome site to Astro static (`src/`, content collections for news).
