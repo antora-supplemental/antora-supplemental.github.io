@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+---
+
+<BaseLayout
+  title={`${entry.data.title} — antora-supplemental`}
+  description={entry.data.description}
+  currentPath={`/blog/${entry.id}/`}
+>
+  <article class="article">
+    <p class="article-back"><a href="/blog/">← Blog</a></p>
+    <header class="article-header">
+      <p class="article-meta">
+        <time datetime={entry.data.date.toISOString().slice(0, 10)}>{formatDate(entry.data.date)}</time>
+        <span class="article-tag">{entry.data.tag}</span>
+      </p>
+      <h1 set:html={entry.data.title.replace(/`([^`]+)`/g, "<code>$1</code>")} />
+    </header>
+    <div class="article-body">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

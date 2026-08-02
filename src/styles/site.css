@@ -445,6 +445,20 @@ main {
   font-size: clamp(1.05rem, 2vw, 1.2rem);
 }
 
+.page-lede a,
+.section-lede a {
+  color: var(--leaf);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+.page-lede a:hover,
+.page-lede a:focus-visible,
+.section-lede a:hover,
+.section-lede a:focus-visible {
+  color: var(--leaf-bright);
+}
+
 .news-list {
   list-style: none;
   margin: 0;
@@ -567,6 +581,41 @@ main {
 .article-body p {
   margin: 0 0 1.15rem;
   color: var(--ink);
+}
+
+.article-body h2 {
+  margin: 2rem 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--moss);
+}
+
+.article-body ul,
+.article-body ol {
+  margin: 0 0 1.15rem;
+  padding-left: 1.35rem;
+  color: var(--ink);
+}
+
+.article-body li {
+  margin-bottom: 0.4rem;
+}
+
+.article-body li:last-child {
+  margin-bottom: 0;
+}
+
+.article-body a {
+  color: var(--leaf);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+
+.article-body a:hover,
+.article-body a:focus-visible {
+  color: var(--leaf-bright);
 }
 
 .article-body p:last-child {

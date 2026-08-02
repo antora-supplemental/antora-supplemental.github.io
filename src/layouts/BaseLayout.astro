@@ -14,6 +14,7 @@ const {
 } = Astro.props;
 
 const isNews = currentPath.startsWith("/news");
+const isBlog = currentPath.startsWith("/blog");
 ---
 
 <!DOCTYPE html>
@@ -50,6 +51,7 @@ const isNews = currentPath.startsWith("/news");
           <a href="/#philosophy">Philosophy</a>
           <a href="/#contributions">Contributions</a>
           <a href="/news/" aria-current={isNews ? "page" : undefined}>News</a>
+          <a href="/blog/" aria-current={isBlog ? "page" : undefined}>Blog</a>
           <a href="https://docs.antora-supplemental.org/">Docs</a>
           <a href="https://registry.antora-supplemental.org/">Registry</a>
           <a href="https://github.com/antora-supplemental">GitHub</a>

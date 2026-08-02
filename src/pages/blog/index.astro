@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const news = (await getCollection("news"))
+const posts = (await getCollection("blog"))
   .filter((e) => !e.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
@@ -11,28 +11,27 @@ const formatDate = (d: Date) =>
 ---
 
 <BaseLayout
-  title="News — antora-supplemental"
-  description="News from antora-supplemental: product releases, major features, and the thinking behind the work."
-  currentPath="/news/"
+  title="Blog — antora-supplemental"
+  description="Longer arguments from antora-supplemental: product policy, upstream gaps, and why we ship what we ship."
+  currentPath="/blog/"
 >
   <header class="page-intro">
-    <p class="hero-kicker page-intro-kicker">Dispatches</p>
-    <h1 class="page-title">News</h1>
+    <p class="hero-kicker page-intro-kicker">Arguments</p>
+    <h1 class="page-title">Blog</h1>
     <p class="page-lede">
-      Releases, hard calls, and progress reports. Direct copy. No press kit fluff. Longer arguments live on the
-      <a href="/blog/">blog</a>.
+      Situation, trade-offs, and the case for a change. News carries the dispatch; this channel carries the reasoning.
     </p>
   </header>
 
-  <section class="section news-feed" aria-labelledby="news-feed-title">
-    <h2 id="news-feed-title" class="visually-hidden">All articles</h2>
+  <section class="section news-feed" aria-labelledby="blog-feed-title">
+    <h2 id="blog-feed-title" class="visually-hidden">All posts</h2>
     <ol class="news-list">
       {
-        news.map((entry) => (
+        posts.map((entry) => (
           <li>
             <time datetime={entry.data.date.toISOString().slice(0, 10)}>{formatDate(entry.data.date)}</time>
             <div>
-              <a href={`/news/${entry.id}/`}>{entry.data.title}</a>
+              <a href={`/blog/${entry.id}/`}>{entry.data.title}</a>
               <p>{entry.data.description}</p>
             </div>
           </li>

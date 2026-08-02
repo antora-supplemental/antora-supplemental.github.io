@@ -1,6 +1,13 @@
 = Changelog
 :toc:
 
+== 2026-08-02 — Blog channel + serve CLI argument
+
+* Add `/blog/` content collection and pages (arguments vs news dispatches).
+* Blog: `antora serve` belongs on the CLI wrapper (engine vs wrapper, #1202 / #1138).
+* News: serve stays supplemental — tracker progression and link to the blog post.
+* Nav: Blog alongside News.
+
 == 2026-08-02 — Unversioned component URLs
 
 * News: rename stopgap extension to `unversioned-component-urls` (selector default; alias mode retained).

@@ -4,7 +4,7 @@ description: >
   The former alias-component-to-latest extension is now unversioned-component-urls —
   choose selector (default) or alias-to-latest for bare /component/ paths.
 tag: unversioned-component-urls
-pubDate: 2026-08-02
+date: 2026-08-02
 ---
 
 Bare `/component/` URLs still 404 on numbered-only Antora components. The stopgap extension now has a name that matches the choice:
