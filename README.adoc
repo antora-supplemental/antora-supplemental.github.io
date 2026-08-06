@@ -1,23 +1,47 @@
+ifndef::env-github[:icons: font]
+:toc: preamble
+:toclevels: 2
+:sectanchors:
+endif::[]
+
+ifndef::env-github[]
+image:https://img.shields.io/github/contributors/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Contributors,link=https://github.com/antora-supplemental/antora-supplemental.github.io/graphs/contributors]
+image:https://img.shields.io/github/forks/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Forks,link=https://github.com/antora-supplemental/antora-supplemental.github.io/network/members]
+image:https://img.shields.io/github/stars/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Stars,link=https://github.com/antora-supplemental/antora-supplemental.github.io/stargazers]
+image:https://img.shields.io/github/issues/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Issues,link=https://github.com/antora-supplemental/antora-supplemental.github.io/issues]
+endif::[]
+
+ifdef::env-github[]
+image:https://img.shields.io/github/contributors/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Issues]
+endif::[]
+
 = antora-supplemental.github.io
-:toc:
 
-Organization welcome site for https://github.com/antora-supplemental[antora-supplemental], published at https://antora-supplemental.org/[antora-supplemental.org] (GitHub Pages hostname: https://antora-supplemental.github.io/[antora-supplemental.github.io]).
+Organization welcome site for antora-supplemental (GitHub Pages root).
 
-== Purpose
+link:https://antora-supplemental.org/[Visit site] ·
+link:https://docs.antora-supplemental.org/[Explore the docs] ·
+link:https://github.com/antora-supplemental/antora-supplemental.github.io/issues[Report Bug]
+
+== About The Project
 
 Astro static landing page: philosophy, notable projects, news, and paths into docs and the ecosystem registry.
 
-* Site: https://antora-supplemental.org/[antora-supplemental.org]
+Published at https://antora-supplemental.org/[antora-supplemental.org] (GitHub Pages hostname: https://antora-supplemental.github.io/[antora-supplemental.github.io]).
+
 * Docs hub: https://docs.antora-supplemental.org/[docs.antora-supplemental.org]
 * Registry: https://registry.antora-supplemental.org/[registry.antora-supplemental.org]
 * Custom domain DNS: link:DOMAIN.adoc[DOMAIN.adoc]
 * Source: this repository (`src/`, `public/`)
 
-== Changelog
+== Built With
 
-See link:CHANGELOG.adoc[CHANGELOG.adoc].
+* link:https://astro.build/[Astro]
 
-== Local preview
+== Getting Started
 
 [source,shell]
 ----
@@ -26,3 +50,10 @@ pnpm dev
 ----
 
 Production build: `pnpm build` (output in `dist/`).
+
+== Contact
+
+Antora Supplemental — support@antora-supplemental.org
+
+* Project: https://github.com/antora-supplemental/antora-supplemental.github.io
+* Site: https://antora-supplemental.org
