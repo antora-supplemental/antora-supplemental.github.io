@@ -3,8 +3,28 @@ ifndef::env-github[:icons: font]
 :toclevels: 2
 :sectanchors:
 
-[[readme-top]]
+ifdef::env-github[]
+++++
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://github.com/antora-supplemental/antora-supplemental.github.io/graphs/contributors"><img src="https://img.shields.io/github/contributors/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/antora-supplemental/antora-supplemental.github.io/network/members"><img src="https://img.shields.io/github/forks/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/antora-supplemental/antora-supplemental.github.io/stargazers"><img src="https://img.shields.io/github/stars/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/antora-supplemental/antora-supplemental.github.io/issues"><img src="https://img.shields.io/github/issues/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge" alt="Issues"></a>
+<br />
+<h3 align="center">antora-supplemental.github.io</h3>
+<p align="center">
+Organization welcome site for antora-supplemental (GitHub Pages root).<br />
+<a href="https://docs.antora-supplemental.org/"><strong>Explore the docs »</strong></a><br /><br />
+<a href="https://antora-supplemental.org/">Visit site</a>
+&middot;
+<a href="https://github.com/antora-supplemental/antora-supplemental.github.io/issues">Report Bug</a>
+</p>
+</div>
+++++
+endif::[]
 
+ifndef::env-github[]
 image:https://img.shields.io/github/contributors/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Contributors,link=https://github.com/antora-supplemental/antora-supplemental.github.io/graphs/contributors]
 image:https://img.shields.io/github/forks/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Forks,link=https://github.com/antora-supplemental/antora-supplemental.github.io/network/members]
 image:https://img.shields.io/github/stars/antora-supplemental/antora-supplemental.github.io.svg?style=for-the-badge[Stars,link=https://github.com/antora-supplemental/antora-supplemental.github.io/stargazers]
@@ -17,6 +37,7 @@ Organization welcome site for antora-supplemental (GitHub Pages root).
 link:https://antora-supplemental.org/[Visit site] ·
 link:https://docs.antora-supplemental.org/[Explore the docs] ·
 link:https://github.com/antora-supplemental/antora-supplemental.github.io/issues[Report Bug]
+endif::[]
 
 == About The Project
 
