@@ -15,3 +15,7 @@
 !public/**
 !.github/
 !.github/**
+!AGENTS.md
+!STYLE.adoc
+!.cursor/
+!.cursor/**

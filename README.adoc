@@ -15,7 +15,7 @@ ifdef::env-github[]
 <h3 align="center">antora-supplemental.github.io</h3>
 <p align="center">
 Organization welcome site for antora-supplemental (GitHub Pages root).<br />
-<a href="https://docs.antora-supplemental.org/"><strong>Explore the docs »</strong></a><br /><br />
+<a href="https://docs.antora-supplemental.org/"><strong>Explore the docs ┬╗</strong></a><br /><br />
 <a href="https://antora-supplemental.org/">Visit site</a>
 &middot;
 <a href="https://github.com/antora-supplemental/antora-supplemental.github.io/issues">Report Bug</a>
@@ -34,8 +34,8 @@ image:https://img.shields.io/github/issues/antora-supplemental/antora-supplement
 
 Organization welcome site for antora-supplemental (GitHub Pages root).
 
-link:https://antora-supplemental.org/[Visit site] ·
-link:https://docs.antora-supplemental.org/[Explore the docs] ·
+link:https://antora-supplemental.org/[Visit site] ┬╖
+link:https://docs.antora-supplemental.org/[Explore the docs] ┬╖
 link:https://github.com/antora-supplemental/antora-supplemental.github.io/issues[Report Bug]
 endif::[]
 
@@ -65,6 +65,11 @@ Published at https://antora-supplemental.org/[antora-supplemental.org] (GitHub P
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 ++++
 
+== Editorial style
+
+Title and headline rules: link:STYLE.adoc[STYLE.adoc]. Agent entrypoint: link:AGENTS.md[AGENTS.md].
+
+
 == Getting Started
 
 [source,shell]
@@ -77,7 +82,7 @@ Production build: `pnpm build` (output in `dist/`).
 
 == Contact
 
-Antora Supplemental — support@antora-supplemental.org
+Antora Supplemental ΓÇö support@antora-supplemental.org
 
 * Project: https://github.com/antora-supplemental/antora-supplemental.github.io
 * Site: https://antora-supplemental.org
