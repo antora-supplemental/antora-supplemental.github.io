@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { DOCS_URL, GITHUB_ORG_URL, REGISTRY_URL } from "../consts";
+import { DOCS_URL, GITHUB_ORG_URL, REGISTRY_CONTRIBUTE_URL, REGISTRY_URL } from "../consts";
 
 const news = (await getCollection("news"))
   .filter((e) => !e.data.draft)
@@ -131,14 +131,14 @@ const formatDate = (d: Date) =>
     </p>
   </section>
 
-  <section class="section cta-band" aria-labelledby="cta-title">
-    <h2 id="cta-title">Docs and registry</h2>
+  <section id="contribute" class="section cta-band" aria-labelledby="contribute-title">
+    <h2 id="contribute-title">Contributing</h2>
     <p>
-      Guides live on the documentation hub. Discover extensions, themes, and UI modules in the ecosystem registry.
+      List an Antora extension, theme, or UI module in the registry so people can find it. The GitHub organization is
+      where this org’s tooling is built.
     </p>
     <p class="hero-actions">
-      <a class="btn btn-primary" href={DOCS_URL}>docs.antora-supplemental.org</a>
-      <a class="btn btn-ghost" href={REGISTRY_URL}>registry.antora-supplemental.org</a>
+      <a class="btn btn-primary" href={REGISTRY_CONTRIBUTE_URL}>List an extension</a>
       <a class="btn btn-ghost" href={GITHUB_ORG_URL}>GitHub org</a>
     </p>
   </section>

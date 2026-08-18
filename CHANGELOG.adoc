@@ -1,6 +1,12 @@
 = Changelog
 :toc:
 
+== 2026-08-18 — Contributing closer + GitHub mark + footer
+
+* Replace the redundant Docs and registry homepage band with a Contributing closer (list an extension, GitHub org).
+* Header GitHub text link becomes a light/dark octocat with no button chrome.
+* Site footer: this-site nav, sibling org links, source and contact.
+
 == 2026-08-02 — Blog channel + serve CLI argument
 
 * Add `/blog/` content collection and pages (arguments vs news dispatches).

@@ -1,4 +1,6 @@
 ---
+import SiteFooter from "../components/SiteFooter.astro";
+import { GITHUB_ORG_URL } from "../consts";
 import "../styles/site.css";
 
 interface Props {
@@ -54,8 +56,30 @@ const isBlog = currentPath.startsWith("/blog");
           <a href="/blog/" aria-current={isBlog ? "page" : undefined}>Blog</a>
           <a href="https://docs.antora-supplemental.org/">Docs</a>
           <a href="https://registry.antora-supplemental.org/">Registry</a>
-          <a href="https://github.com/antora-supplemental">GitHub</a>
         </nav>
+        <a
+          class="github-link"
+          href={GITHUB_ORG_URL}
+          title="GitHub organization"
+          aria-label="GitHub organization"
+        >
+          <img
+            class="github-mark github-mark-for-light"
+            src="/assets/github-mark.svg"
+            width="24"
+            height="24"
+            alt=""
+            aria-hidden="true"
+          />
+          <img
+            class="github-mark github-mark-for-dark"
+            src="/assets/github-mark-white.svg"
+            width="24"
+            height="24"
+            alt=""
+            aria-hidden="true"
+          />
+        </a>
         <button
           type="button"
           class="theme-toggle"
@@ -83,17 +107,7 @@ const isBlog = currentPath.startsWith("/blog");
       <slot />
     </main>
 
-    <footer class="site-footer">
-      <p>
-        <a href="https://github.com/antora-supplemental">antora-supplemental</a>
-        · supplemental to
-        <a href="https://antora.org">Antora</a>
-        · site source in
-        <a href="https://github.com/antora-supplemental/antora-supplemental.github.io"
-          >antora-supplemental.github.io</a
-        >
-      </p>
-    </footer>
+    <SiteFooter />
 
     <script src="/js/site.js" defer></script>
   </body>

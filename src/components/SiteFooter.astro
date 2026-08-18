@@ -1,0 +1,55 @@
+---
+import {
+  ANTORA_URL,
+  CONTACT_EMAIL,
+  DOCS_URL,
+  GITHUB_ORG_URL,
+  REGISTRY_URL,
+  SIBLING_ORGS,
+  SITE_SOURCE_URL,
+} from "../consts";
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="footer-brand-mark" href="/">
+        <img class="footer-logo" src="/assets/logo.svg" width="32" height="32" alt="" />
+        <span>antora-supplemental</span>
+      </a>
+      <p class="footer-lede">
+        GitHub-native Actions, themes, and community tooling the Antora project does not host.
+      </p>
+    </div>
+
+    <nav class="footer-nav" aria-label="This site">
+      <span class="footer-heading">This site</span>
+      <a href="/#philosophy">Philosophy</a>
+      <a href="/#contributions">Contributions</a>
+      <a href="/news/">News</a>
+      <a href="/blog/">Blog</a>
+      <a href={DOCS_URL}>Docs</a>
+      <a href={REGISTRY_URL}>Registry</a>
+      <a href={GITHUB_ORG_URL}>GitHub</a>
+    </nav>
+
+    <nav class="footer-orgs-nav" aria-label="Sibling organizations">
+      <span class="footer-heading">Sibling orgs</span>
+      <ul class="footer-orgs">
+        {
+          SIBLING_ORGS.map((org) => (
+            <li>
+              <a href={org.href}>{org.name}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+
+  <p class="footer-meta">
+    Supplemental to <a href={ANTORA_URL}>Antora</a>
+    · source in <a href={SITE_SOURCE_URL}>antora-supplemental.github.io</a>
+    · <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+  </p>
+</footer>
