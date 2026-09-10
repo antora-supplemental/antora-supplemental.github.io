@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://antora-supplemental.org/sitemap-index.xml

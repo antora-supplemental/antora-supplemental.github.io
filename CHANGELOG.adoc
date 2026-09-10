@@ -1,6 +1,11 @@
 = Changelog
 :toc:
 
+== 2026-09-10 — Sitemap and robots.txt
+
+* Add `@astrojs/sitemap` (build emits `sitemap-index.xml`).
+* Add `public/robots.txt` with `Sitemap: https://antora-supplemental.org/sitemap-index.xml`.
+
 == 2026-08-18 — Contributing closer + GitHub mark + footer
 
 * Replace the redundant Docs and registry homepage band with a Contributing closer (list an extension, GitHub org).
